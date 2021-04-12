@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <title> <%= locals.title %> </title>
+        <link rel="stylesheet" type="text/css" href="C:\Users\dell\Desktop\coding ninjas\site\resume.css">
+	    <script src="https://kit.fontawesome.com/a0f109fe89.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <div class="body-container">
+            <div class="page-header">
+                <h1>TODO LIST</h1>
+            </div>
+            <form action="/create-task" class="formate" method="post">
+                <div class="desc">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" placeholder="What to you need to do?">
+                </div>
+                <div class="category-date">
+                    <div class="category">
+                        <label for="category">Category</label>
+                        <select name="category" id="category">
+                            <option value="">Choose a Category</option>
+                            <option value="personal">Personal</option>
+                            <option value="school">School</option>
+                            <option value="home">Home</option>
+                            <option value="college">College</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="date">
+                        <label for="date">Due-Date</label>
+                        <input type="date" name="date">
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="add-task">
+                        <i class="fas fa-plus"></i>
+                        <button type="submit">ADD TASK</button>
+                    </div>
+                    <div class="delete-task">
+                        <i class="fas fa-trash-alt"></i>
+                        <button formaction="/delete-task" type="submit">DELETE TASK</button>
+                    </div>
+                </div>
+                <div class="display">
+                        <% for(let i of todo_list) {%>
+                            <div class="item">
+                                <div class="item-basic">
+                                    <div class="list-display">
+                                        <div class="box">
+                                            <input type="checkbox" value="<%= i._id %>" name="check">
+                                        </div>
+                                        <div class="basic">
+                                            <div class="task">
+                                                <%= i.description %>
+                                            </div>
+                                            <div class="time">
+                                                <i class="fas fa-calendar-alt"></i>
+                                                <%= i.date.toString().substring(4,15) %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cat">
+                                        <p><%= i.category %></p>
+                                    </div>
+                                </div> 
+                            </div>  
+                        <% } %>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
