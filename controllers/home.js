@@ -3,6 +3,7 @@ const task = require("../models/home");
 
 //routes to the home page
 module.exports.home = function (req, res) {
+    //this is to set the background color dynamically for the selected category
   const theme = {
     home: "green",
     school: "blue",

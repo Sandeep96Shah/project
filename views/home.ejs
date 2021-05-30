@@ -19,6 +19,7 @@
       <div class="page-header">
         <h1>TODO LIST</h1>
       </div>
+      <!-- form for user to write their task to do -->
       <form action="/create-task" class="formate" method="post">
         <div class="desc">
           <label for="description">Description</label>
@@ -28,6 +29,7 @@
             placeholder="What to you need to do?"
           />
         </div>
+        <!-- to select the catetory from the given options -->
         <div class="category-date">
           <div class="category">
             <label for="category">Category</label>
@@ -40,21 +42,26 @@
               <option value="other">Other</option>
             </select>
           </div>
+          <!-- to select the date for the task  -->
           <div class="date">
             <label for="date">Due-Date</label>
             <input type="date" name="date" />
           </div>
         </div>
+        <!-- buttons -->
         <div class="btn">
+            <!-- to add the task -->
           <div class="add-task">
             <i class="fas fa-plus"></i>
             <button type="submit">ADD TASK</button>
           </div>
+          <!-- to delete the task -->
           <div class="delete-task">
             <i class="fas fa-trash-alt"></i>
             <button formaction="/delete-task" type="submit">DELETE TASK</button>
           </div>
         </div>
+        <!-- displaying various tasks with time and category -->
         <div class="display">
           <% for(let i of todo_list) {%>
           <div class="item">
@@ -74,9 +81,10 @@
               <div class="cat">
                 <% for(let j in cat_theme) { %> 
                     <% if(j==i.category) { %>
-                        <p style="background-color:<%= cat_theme[j] %>">
+                        <!-- selecting the background color dynamically -->
+                        <p style="background-color: <%= cat_theme[j] %>">
                             <%= i.category %>
-                        </p>
+                        </p> 
                         <% break; %>
                      <% } %> 
                 <% } %>
