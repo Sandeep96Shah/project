@@ -1,16 +1,16 @@
 //adding the express library
-const express = require('express');
+const express = require("express");
 
-//getting the functionality of express.Router 
+//getting the functionality of express.Router
 const router = express.Router();
 
 //getting the controller
-const homeController = require('../controllers/home');
+const homeController = require("../controllers/home");
 
 //routes
-router.get('/home',homeController.home);
-router.post('/delete-task',homeController.delete);
-router.post('/create-task',homeController.create);
+router.get("/home", homeController.home);
+router.post("/delete-task", homeController.delete);
+router.post("/create-task", homeController.create);
 
-//exporting 
+//exporting
 module.exports = router;
