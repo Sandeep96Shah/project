@@ -6,7 +6,7 @@
       type="text/css"
       href="C:\Users\dell\Desktop\coding ninjas\site\resume.css"
     />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <script
       src="https://kit.fontawesome.com/a0f109fe89.js"
@@ -50,7 +50,7 @@
         </div>
         <!-- buttons -->
         <div class="btn">
-            <!-- to add the task -->
+          <!-- to add the task -->
           <div class="add-task">
             <i class="fas fa-plus"></i>
             <button type="submit">ADD TASK</button>
@@ -79,15 +79,14 @@
                 </div>
               </div>
               <div class="cat">
-                <% for(let j in cat_theme) { %> 
-                    <% if(j==i.category) { %>
-                        <!-- selecting the background color dynamically -->
-                        <p style="background-color: <%= cat_theme[j] %>">
-                            <%= i.category %>
-                        </p> 
-                        <% break; %>
-                     <% } %> 
-                <% } %>
+                <% for(let j in cat_theme) { %> <% if(j==i.category) { %>
+                <!-- selecting the background color dynamically -->
+                  <p style="background-color: <%= cat_theme[j] %>">
+                    <%= i.category %>
+                  </p>
+                 
+                <!-- </p> -->
+                <% break; %> <% } %> <% } %>
               </div>
             </div>
           </div>
