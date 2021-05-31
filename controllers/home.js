@@ -1,7 +1,7 @@
 //acquiring the bridge to the database
 const task = require("../models/home");
 
-//routes to the home page
+//action for the home page
 module.exports.home = function (req, res) {
     //this is to set the background color dynamically for the selected category
   const theme = {
@@ -24,7 +24,7 @@ module.exports.home = function (req, res) {
   });
 };
 
-//routes to the create page
+//action to create page
 module.exports.create = function (req, res) {
   task.create(req.body, function (err, newList) {
     if (err) {
@@ -36,7 +36,7 @@ module.exports.create = function (req, res) {
   });
 };
 
-//routes to the delete page
+//action to delete page
 module.exports.delete = function (req, res) {
   let deleteTask = req.body.check;
   console.log(deleteTask);
