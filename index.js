@@ -4,7 +4,7 @@ const express = require("express");
 //database
 const db = require("./config/mongoose");
 //port
-const port = 7000;
+const port = process.env.PORT || 7000;
 
 //acquiring the functionality of express in app
 const app = express();
