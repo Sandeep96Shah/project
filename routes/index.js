@@ -8,7 +8,7 @@ const router = express.Router();
 const homeController = require("../controllers/home");
 
 //routes
-router.get("/home", homeController.home);
+router.get("/", homeController.home);
 router.post("/delete-task", homeController.delete);
 router.post("/create-task", homeController.create);
 
